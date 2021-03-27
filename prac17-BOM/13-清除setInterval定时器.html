@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+
+<body>
+    <button class="begin">开启定时器</button>
+    <button class="stop">停止定时器</button>
+    <script>
+        var begin = document.querySelector('.begin');
+        var stop = document.querySelector('.stop');
+        //when we need an empty object, using =null to delcare
+        //用var的时候，如果需要再另一个function b里面使用之前function a里面的变量，var必须要在fucntion a 之前declare
+        var timer = null; // 全局变量  null是一个空对象
+        begin.addEventListener('click', function() {
+            timer = setInterval(function() {
+                console.log('ni hao ma');
+
+            }, 1000);
+        })
+        stop.addEventListener('click', function() {
+            clearInterval(timer);
+        })
+    </script>
+</body>
+
+</html>

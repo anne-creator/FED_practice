@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+
+<body>
+    <button>点击</button>
+    <div></div>
+    <script>
+
+        let btn = document.querySelector('button');
+        let div = document.querySelector('div');
+
+        // 点击后：
+        //     count = 5
+        //     每秒钟执行一次：
+        //         if（count等于0）：
+        //             div为：the page will jump in ${count}s
+        //             count--
+        //         else： 
+        //             跳转网页：'https://www.bilibili.com/video/BV1Sy4y1C7ha?p=282&spm_id_from=pageDriver'
+        
+        
+        btn.addEventListener('click',function(){
+            let count = 5;
+            setInterval(function() {
+            if(count != 0){
+                div.innerHTML = `the page will jump in ${count}s` 
+                count--;
+            }else{ 
+                location.href = 'https://www.bilibili.com/video/BV1Sy4y1C7ha?p=282&spm_id_from=pageDriver';
+                   
+            }
+        },1000);
+        })
+
+    </script>
+</body>
+
+</html>

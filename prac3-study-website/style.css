@@ -1,0 +1,402 @@
+* {
+    margin: 0;
+    padding: 0;
+}
+
+.w {
+    width: 1200px;
+    margin: 0 auto;
+}
+
+.clearfix:before, .clearfix:after {
+    content: "";
+    display: table;
+}
+
+.clearfix:after {
+    clear: both;
+}
+
+.clearfix {
+    *zoom: 1;
+}
+
+a {
+    text-decoration: none;
+}
+
+body {
+    background-color: #f3f5f7;
+}
+
+li {
+    list-style: none;
+}
+
+/* header section start */
+
+header {
+    height: 42px;
+    /* background-color: pink; */
+    padding: 29px 0;
+}
+
+.logo {
+    float: left;
+    /* background-color: yellow; */
+    width: 200px;
+    height: 42px;
+    background-image: url(img/logo.png);
+}
+
+header nav ul {
+    float: left;
+    padding-left: 70px;
+    /* background-color: yellow; */
+}
+
+header nav ul li {
+    float: left;
+    line-height: 42px;
+}
+
+header nav ul li a {
+    color: skyblue;
+    padding: 15px 20px;
+}
+
+header nav ul li a:hover {
+    border-bottom: 2px solid slateblue;
+}
+
+header .search {
+    float: left;
+    height: 42px;
+    margin-left: 76px;
+}
+
+header .search input {
+    float: left;
+    width: 342px;
+    border: 1px solid skyblue;
+    height: 40px;
+    padding-left: 20px;
+}
+
+header .search .btn {
+    float: left;
+    height: 42px;
+    width: 50px;
+    background-image: url(img/btn.png);
+}
+
+header .user {
+    float: right;
+    margin-right: 20px;
+    font-size: 14px;
+    color: 666;
+    line-height: 42px;
+    vertical-align: middle;
+}
+
+header .user p {
+    display: inline-block;
+}
+
+/* header section end */
+
+/* banner section start */
+
+.banner {
+    background-color: #1c036c;
+    height: 420px;
+}
+
+.banner .bg {
+    background-image: url(img/banner2.png);
+    background-position: top center;
+    height: 420px;
+}
+
+/* this is sub nav--float to left */
+
+.banner .bg .subnav {
+    float: left;
+    width: 190px;
+    height: 420px;
+    background-color: rgba(0, 0, 0, 0.3);
+}
+
+.banner .bg .subnav li {
+    padding: 0 15px;
+    height: 42px;
+    line-height: 42px;
+}
+
+.banner .bg .subnav li:first-child {
+    margin-top: 15px;
+}
+
+.banner .bg .subnav li a {
+    color: #fff;
+}
+
+.banner .bg .subnav li a:hover {
+    color: skyblue;
+}
+
+.banner .bg .subnav li span {
+    float: right;
+}
+
+/* this is the course--> float to right */
+
+.banner .bg .course {
+    float: right;
+    width: 230px;
+    height: 300px;
+    margin-top: 50px;
+    background-color: #fff;
+}
+
+.banner .bg .course .head {
+    height: 50px;
+    color: #fff;
+    background-color: skyblue;
+    line-height: 50px;
+    text-align: center;
+    font-size: 18px;
+}
+
+.banner .bg .course .body {
+    padding: 0 20px;
+}
+
+.banner .bg .course .body ul li {
+    /* height: 50px; */
+    /* line-height: 50px; */
+    padding: 12px 0;
+    /* background-color: red; */
+    border-bottom: 1px solid skyblue;
+}
+
+.banner .bg .course .body ul li h3 {
+    font-size: 16px;
+}
+
+.banner .bg .course .body ul li p {
+    font-size: 12px;
+}
+
+.banner .bg .course .body a {
+    display: block;
+    color: skyblue;
+    text-align: center;
+    line-height: 40px;
+    height: 40px;
+    width: 100%;
+    border: 1px solid skyblue;
+    border-radius: 8em;
+    font-size: 16px;
+    margin-top: 10px;
+}
+
+.banner .bg .course .body a:hover {
+    color: #fff;
+    background-color: skyblue;
+}
+
+/* banner section end */
+
+/* second nav start  */
+
+.second-nav {
+    height: 60px;
+    margin-top: 10px;
+    background-color: #fff;
+    box-shadow: 2px 2px 3px 3px rgba(0, 0, 0, 0.05);
+}
+
+.second-nav h3 {
+    float: left;
+    color: skyblue;
+    font-weight: 700;
+    line-height: 60px;
+    padding: 0 36px;
+}
+
+.second-nav ul li {
+    float: left;
+}
+
+.second-nav>a {
+    float: right;
+    /* height: 50px; does not need becuase inline-height will be inherited from father div */
+    line-height: 60px;
+    padding: 0 18px;
+    color: skyblue;
+    font-size: 16px;
+}
+
+.second-nav ul li::before {
+    content: "|";
+    color: rgba(0, 0, 0, 0.3);
+}
+
+.second-nav ul li a {
+    display: inline-block;
+    /* height: 50px; does not need becuase inline-height will be inherited from father div*/
+    line-height: 60px;
+    padding: 0 34px;
+    color: #000;
+    font-size: 16px;
+}
+
+.second-nav ul li a:hover {
+    /* background-color: skyblue; */
+    color: skyblue;
+    border-bottom: 2px solid skyblue;
+}
+
+/* second nav end */
+
+/*main start  */
+
+.box {
+    /* height: 560px; */
+    /* background-color: red; */
+    margin-top: 34px;
+}
+
+.box .box-hd {
+    height: 42px;
+    /* background-color: red; */
+}
+
+.box .box-hd h4 {
+    float: left;
+    height: 42px;
+    line-height: 42px;
+    font-weight: 700;
+    font-size: 18px;
+    /* padding-left: 34px; */
+}
+
+.box .box-hd a {
+    float: right;
+    line-height: 42px;
+    color: skyblue;
+    padding-right: 18px;
+}
+
+.box .box-bd {
+    /* height: 560px; should not define height since more li will might be added later */
+    /* method one, enlarge the ul width with one margin  */
+    /* width: 1215px; */
+}
+
+.box .box-bd ul li {
+    float: left;
+    height: 270px;
+    width: 228px;
+    margin-right: 15px;
+    margin-bottom: 15px;
+    background-color: #fff;
+    box-shadow: 2px 2px 2px 2px rgba(0, 0, 0, 0.03);
+}
+
+.box .box-bd ul li:hover {
+    box-shadow: none;
+    background-color: rgb(198, 239, 255);
+}
+
+.box .box-bd ul li:nth-child(5n) {
+    margin: 0;
+}
+
+.box-bd img {
+    width: 100%;
+}
+
+.box-bd ul li a .info {
+    margin-left: 25px;
+    margin-right: 20px;
+}
+
+.box-bd ul li a .info h3 {
+    padding: 20px 0;
+    font-size: 14px;
+    color: #000;
+}
+
+.box-bd ul li a .info p {
+    font-size: 12px;
+    color: rgba(0, 0, 0, 0.5);
+}
+
+.box-bd ul li a .info p span {
+    color: orange;
+}
+
+/* main section end */
+
+/* footer start */
+
+footer {
+    height: 418px;
+    background-color: #fff;
+    margin-top: 40px;
+}
+
+footer .center .download {
+    float: left;
+    width: 450px;
+    padding-left: 18px;
+    padding-top: 34px;
+}
+
+footer .center .download p {
+    font-size: 12px;
+    margin-top: 20px;
+    color: #666;
+}
+
+footer .center .download a {
+    display: block;
+    height: 36px;
+    line-height: 36px;
+    width: 120px;
+    text-align: center;
+    margin-top: 18px;
+    border: 1px solid skyblue;
+    color: skyblue;
+    font-size: 12px;
+}
+
+footer .nav {
+    float: right;
+    padding-top: 34px;
+}
+
+footer .nav .section {
+    float: left;
+    text-align: left;
+    margin-right: 32px;
+    padding-right: 70px;
+}
+
+footer .nav .section:last-child {
+    padding-right: 0;
+}
+
+footer .nav .section h3 {
+    color: #333;
+    font-size: 16px;
+    padding-bottom: 16px;
+}
+
+footer .nav .section ul li a {
+    color: #333;
+    font-size: 12px;
+    line-height: 23px;
+}

@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        // 借用父构造函数继承属性
+        // 1. 父构造函数
+        function Father(name) {
+            this.name = name;
+        }
+        Father.prototype.money = function() {
+            console.log('100000000');
+        }
+
+        // console.log(Father);
+        let a = new Father('zxy')
+        // a.money();
+
+        function Son(uname,age,score) {
+            Father.call(this,uname,age)
+            this.score = score;
+        }
+        // let b = new Son('ldh',18,99);
+        // console.log(b.name);//子类含有父类的属性
+        // console.log(b.unname);
+        Son.prototype = new Father();//让Son的prototype指向一个实例化的father
+        Son.prototype.constructor = Son;//让实例化father的constructor的指向son
+        Son.prototype.pay = function() {
+            console.log('50000');
+        }
+        let b = new Son('ldh',18,99);
+        console.log(b);
+        console.log(a);
+       
+
+    </script>
+</body>
+
+</html>

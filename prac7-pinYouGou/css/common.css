@@ -1,0 +1,26 @@
+/* content area */
+
+.w {
+    width: 1200px;
+    margin: 0 auto;
+}
+
+/* shortcut model */
+
+.shortcut {
+    /* //section is inline ele, change it to block; */
+    display: block;
+    height: 30px;
+    background-color: #f1f1f1;
+    line-height: 31px;
+    font-size: 12px;
+}
+
+.shortcut ul li {
+    float: left;
+}
+
+.fl {
+    margin-left: 5px;
+    color: #666;
+}

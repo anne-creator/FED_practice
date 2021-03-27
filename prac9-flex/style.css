@@ -1,0 +1,160 @@
+* {
+    padding: 0;
+    margin: 0;
+}
+
+li {
+    text-decoration: none;
+}
+
+.flex-container {
+    display: flex;
+    flex-wrap: nowrap;
+}
+
+body {
+    min-width: 360px;
+    font-family: Helvetica;
+    font-size: 22px;
+    color: seashell;
+    background-color: black;
+    opacity: 0.9;
+}
+
+h2, h4 {
+    padding: 20px;
+}
+
+a {
+    text-decoration: underline;
+}
+
+header {
+    position: fixed;
+    display: flex;
+    justify-content: space-between;
+    height: 69px;
+    width: 100%;
+    border-bottom: 1px solid seashell;
+    align-items: center;
+    background-color: black;
+}
+
+header img {
+    height: 50px;
+    margin-left: 1%;
+}
+
+header ul {
+    display: flex;
+}
+
+header ul li {
+    list-style: none;
+}
+
+header ul li a {
+    flex: 1;
+    padding: 20px 10px;
+    color: seashell;
+}
+
+.main {
+    max-width: 1200px;
+    margin: auto;
+    padding-top: 69px;
+}
+
+.mission {
+    display: flex;
+    align-items: center;
+    height: 700px;
+    max-width: 1200px;
+    background: url(img/missionBackground.webp) no-repeat;
+    background-size: cover;
+    background-position: center center;
+}
+
+.mission-text {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 100%;
+    background-color: black;
+    opacity: 0.9;
+    padding: 15px;
+}
+
+.tea {
+    padding: 50px;
+    max-width: 1000px;
+}
+
+.tea-heading {
+    text-align: center;
+}
+
+.tea-pic {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+}
+
+.item {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 10px;
+}
+
+.item img {
+    height: 200px;
+    width: 300px;
+}
+
+.location {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    max-width: 1200px;
+    height: 700px;
+    background: url(img/locationsBackground.webp) no-repeat;
+    background-size: cover;
+    background-position: center center;
+}
+
+.item-heading {
+    text-align: center;
+}
+
+.item-wrap {
+    display: flex;
+    justify-content: center;
+}
+
+.location-item {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    align-items: center;
+    height: 400px;
+    width: 300px;
+    background-color: black;
+    margin: 0 20px;
+    flex: 0.3
+}
+
+.contact {
+    display: flex;
+    height: 200px;
+    flex-direction: column;
+    justify-content: space-around;
+    align-items: center;
+}
+
+footer h4 {
+    margin-left: 1%;
+    font-weight: normal;
+    /* vertical-align: left; */
+}

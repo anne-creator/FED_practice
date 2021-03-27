@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <style>
+        div {
+            margin: 200px;
+        }
+        
+        span {
+            display: inline-block;
+            width: 40px;
+            height: 40px;
+            background-color: #333;
+            font-size: 20px;
+            color: #fff;
+            text-align: center;
+            line-height: 40px;
+        }
+    </style>
+</head>
+
+<body>
+    <div>
+        <span class="hour">1</span>
+        <span class="minute">2</span>
+        <span class="second">3</span>
+    </div>
+    <script>
+        let hour = document.querySelector('.hour');
+        let minute = document.querySelector('.minute');
+        let second = document.querySelector('.second');
+        
+        const hours = 1;//how many hourst you want to cout
+        //if using pupose date time
+        // var inputTime = +new Date('2021-3-19 00:00:00');//得到目标时间
+        const begin = +new Date();
+        function count() {
+            let nowTime = +new Date();//得到当前时间
+            let inputTime = begin + hours*60*60*1000//目标时间，倒计时结束的时间戳：using initialed begin time plus time to count
+            let times = (inputTime - nowTime) / 1000; // 目标时间减去当前时间
+
+            // var d = parseInt(times / 60 / 60 / 24); // 天
+            // d = d < 10 ? '0' + d : d;
+
+            let h = parseInt(times / 60 / 60 % 24); //时
+            h = h < 10 ? '0' + h : h;
+            console.log(h);
+            let m = parseInt(times / 60 % 60); // 分
+            m = m < 10 ? '0' + m : m;
+            let s = parseInt(times % 60); // 当前的秒
+            s = s < 10 ? '0' + s : s;
+            hour.innerHTML = h;
+            minute.innerHTML = m;
+            second.innerHTML = s;
+        }
+        
+        setInterval(count,1000);
+
+
+            
+            
+       
+
+
+
+    </script>
+</body>
+
+</html
