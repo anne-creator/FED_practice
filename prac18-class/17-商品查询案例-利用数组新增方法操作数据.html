@@ -69,49 +69,48 @@
         }, ];
         // 1. 获取相应的元素
         var tbody = document.querySelector('tbody');
-        var search_price = document.querySelector('.search-price');
-        var start = document.querySelector('.start');
-        var end = document.querySelector('.end');
-        var product = document.querySelector('.product');
-        var search_pro = document.querySelector('.search-pro');
-        setDate(data);
+        var start = document.querySelector('.start')
+        var end = document.querySelector('.end')
+        var search = document.querySelector('.search-price')
+        var searchPro = document.querySelector('.search-pro')
+        var product = document.querySelector('.product')
+        init(data)
         // 2. 把数据渲染到页面中
-        function setDate(mydata) {
-            // 先清空原来tbody 里面的数据
-            tbody.innerHTML = '';
-            mydata.forEach(function(value) {
-                // console.log(value);
-                var tr = document.createElement('tr');
-                tr.innerHTML = '<td>' + value.id + '</td><td>' + value.pname + '</td><td>' + value.price + '</td>';
-                tbody.appendChild(tr);
-            });
+        function init(data) {
+            //用forEach代替for loop
+            data.forEach(ele => tbody.innerHTML += `<tr><td>${ele.id}</td><td>${ele.pname}</td><td>${ele.price}</td></tr>`)
+            //forEach 不用=》
+            // data.forEach(function(value){})
+        //     for (let i = 0; i < data.length; i++) {
+        //    tbody.innerHTML += `<tr><td>${data[i].id}</td><td>${data[i].pname}</td><td>${data[i].price}</td></tr>`;
+        // }
         }
-
+        function clear() {
+            tbody.innerHTML = '';
+        }
         // 3. 根据价格查询商品
         // 当我们点击了按钮,就可以根据我们的商品价格去筛选数组里面的对象
-        search_price.addEventListener('click', function() {
-            // alert(11);
-            var newDate = data.filter(function(value) {
-                return value.price >= start.value && value.price <= end.value;
-            });
-            console.log(newDate);
-            // 把筛选完之后的对象渲染到页面中
-            setDate(newDate);
-        });
+
+        function searchPrice() {
+            clear();
+            let newData = data.filter(ele => ele.price >= start.value && ele.price <= end.value)
+            init(newData)
+        }
+        search.addEventListener('click', searchPrice);
         // 4. 根据商品名称查找商品
-        // 如果查询数组中唯一的元素, 用some方法更合适,因为它找到这个元素,就不在进行循环,效率更高]
-        search_pro.addEventListener('click', function() {
-            var arr = [];
-            data.some(function(value) {
-                if (value.pname === product.value) {
-                    // console.log(value);
-                    arr.push(value);
-                    return true; // return 后面必须写true  
-                }
-            });
-            // 把拿到的数据渲染到页面中
-            setDate(arr);
+        // 如果查询数组中唯一的元素, 用some
+
+        searchPro.addEventListener('click',function(){
+            clear();
+            let arr = []
+            data.some(ele => {if(ele.pname === product.value){
+                arr.push(ele);
+                console.log(arr);
+                return true;//终止查询，节省内存
+            }});
+            init(arr)
         })
+    
     </script>
 </body>
 
