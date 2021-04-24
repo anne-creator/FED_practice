@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <title>计数器</title>
+    <link rel="stylesheet" href="./index.css" />
+</head>
+
+<body>
+    <!-- html结构 -->
+    <div>
+        <!-- 计数器功能区域 -->
+        <div id='app' class="input-num">
+            <button v-on:click="subNum">-</button>
+            <span>{{ num }}</span>
+            <button v-on:click="addNum"> + </button>
+        </div>
+    </div>
+
+</body>
+<script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js "></script>
+<script>
+ let app = new Vue({
+     el:'#app',
+     data: {
+         num:'0',
+     },
+     methods:{
+         addNum:function() {
+             if(this.num < 10) {
+                this.num++;
+             } else {
+                 alert('the number has achieved 10');
+             }
+         },
+
+         subNum:function() {
+             if(this.num > 0) {
+                 this.num--;
+             } else {
+                 alert('The number has achieved 0');
+             }
+         },
+     }
+ })
+</script>
+
+</html>
