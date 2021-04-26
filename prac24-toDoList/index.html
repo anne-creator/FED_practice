@@ -1,0 +1,70 @@
+<html>
+
+<head>
+  <meta http-equiv="content-type" content="text/html; charset=UTF-8" />
+  <title>To Do List</title>
+  <meta http-equiv="content-type" content="text/html; charset=UTF-8" />
+  <meta name="robots" content="noindex, nofollow" />
+  <meta name="googlebot" content="noindex, nofollow" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <link rel="stylesheet" type="text/css" href="./css/index.css" />
+</head>
+
+<body>
+  <!-- main -->
+  <section id="todoapp">
+    <!-- input -->
+    <header class="header">
+      <h1>To Do List</h1>
+      <input v-model="inputValue" @keyup.enter="add" autofocus="autofocus" autocomplete="off" placeholder="Enter Your Task"
+        class="new-todo" />
+    </header>
+    <!-- list -->
+    <section class="main">
+      <ul  class="todo-list">
+        <li class="todo" v-for="(item, index) in list" >
+          <div class="view">
+            <span class="index">{{index + 1}}</span>
+            <label>{{item}}</label>
+            <button class="destroy" @click="deleteItem(index)"></button>
+          </div>
+        </li>
+      </ul>
+    </section>
+    <!-- counter and clear -->
+    <footer class="footer" v-show="list.length!=0" >
+      <span class="todo-count" >
+        <strong>{{list.length}}</strong> items left
+      </span>
+      <button  @click="clearAll" class="clear-completed">
+        Clear
+      </button>
+    </footer>
+  </section>
+  <!-- vue -->
+  <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+</body>
+<script>
+      let app = new Vue({
+      el:"#todoapp",
+      data:{
+        list:['exercise','drink water'],
+        // 获取表单数据
+        inputValue:"",
+      },
+      methods:{
+        add(){
+          this.list.push(this.inputValue);//新增task
+          this.inputValue=""; //回车后清空input
+        },
+        deleteItem(index){
+          this.list.splice(index,1);
+        },
+        clearAll() {
+          this.list = [];
+        }
+      }
+    })
+</script>
+</html>
+
